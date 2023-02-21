@@ -1,0 +1,2 @@
+cc -Wall -Wextra -Werror   -c -o ft_pipex.o ft_pipex.c
+make[1]: Nothing to be done for `all'.
