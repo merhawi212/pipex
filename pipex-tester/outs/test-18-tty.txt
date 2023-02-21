@@ -1,0 +1,62 @@
+==25500== Memcheck, a memory error detector
+==25500== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==25500== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==25500== Command: ../pipex assets/deepthought.txt grep\ Now head\ -2 outs/test-18.txt
+==25500== 
+cmd not foun
+cmd not foun
+==25503== 
+==25503== HEAP SUMMARY:
+==25503==     in use at exit: 17 bytes in 1 blocks
+==25503==   total heap usage: 4 allocs, 3 frees, 61 bytes allocated
+==25503== 
+==25503== 17 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==25503==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25503==    by 0x10A557: ft_substr (in /workspaces/pipex/pipex)
+==25503==    by 0x109E4D: ft_split (in /workspaces/pipex/pipex)
+==25503==    by 0x109A2F: ft_get_paths (in /workspaces/pipex/pipex)
+==25503==    by 0x1095E5: ft_child_process_one (in /workspaces/pipex/pipex)
+==25503==    by 0x1096EA: ft_pipex (in /workspaces/pipex/pipex)
+==25503==    by 0x109BD1: main (in /workspaces/pipex/pipex)
+==25503== 
+==25503== LEAK SUMMARY:
+==25503==    definitely lost: 17 bytes in 1 blocks
+==25503==    indirectly lost: 0 bytes in 0 blocks
+==25503==      possibly lost: 0 bytes in 0 blocks
+==25503==    still reachable: 0 bytes in 0 blocks
+==25503==         suppressed: 0 bytes in 0 blocks
+==25503== 
+==25503== For lists of detected and suppressed errors, rerun with: -s
+==25503== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==25504== 
+==25504== HEAP SUMMARY:
+==25504==     in use at exit: 17 bytes in 1 blocks
+==25504==   total heap usage: 4 allocs, 3 frees, 61 bytes allocated
+==25504== 
+==25504== 17 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==25504==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25504==    by 0x10A557: ft_substr (in /workspaces/pipex/pipex)
+==25504==    by 0x109E4D: ft_split (in /workspaces/pipex/pipex)
+==25504==    by 0x109A2F: ft_get_paths (in /workspaces/pipex/pipex)
+==25504==    by 0x1093EA: ft_child_process_two (in /workspaces/pipex/pipex)
+==25504==    by 0x109700: ft_pipex (in /workspaces/pipex/pipex)
+==25504==    by 0x109BD1: main (in /workspaces/pipex/pipex)
+==25504== 
+==25504== LEAK SUMMARY:
+==25504==    definitely lost: 17 bytes in 1 blocks
+==25504==    indirectly lost: 0 bytes in 0 blocks
+==25504==      possibly lost: 0 bytes in 0 blocks
+==25504==    still reachable: 0 bytes in 0 blocks
+==25504==         suppressed: 0 bytes in 0 blocks
+==25504== 
+==25504== For lists of detected and suppressed errors, rerun with: -s
+==25504== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==25500== 
+==25500== HEAP SUMMARY:
+==25500==     in use at exit: 0 bytes in 0 blocks
+==25500==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==25500== 
+==25500== All heap blocks were freed -- no leaks are possible
+==25500== 
+==25500== For lists of detected and suppressed errors, rerun with: -s
+==25500== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

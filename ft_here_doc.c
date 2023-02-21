@@ -29,6 +29,7 @@ static char	**update_argv(char **argv)
 	while (argv[i])
 		temp[j++] = argv[i++];
 	temp[j] = 0;
+	free(argv);
 	return (temp);
 }
 
@@ -66,9 +67,13 @@ char	**here_doc(int *fd[], char **argv, char *path, int len)
 	while (get_next_line(STDIN_FILENO, &line))
 	{
 		if (ft_strncmp(line, argv[2], ft_strlen(argv[2])) == 0)
+		{
+			free(line);
 			break ;
+		}
 		write(fd1, line, ft_strlen(line));
 		write(fd1, "\n", 1);
+		free(line);
 	}
 	free(line);
 	close(fd1);

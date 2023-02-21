@@ -92,9 +92,19 @@ char	*ft_get_paths(char *envp, char *arg)
 		joined = ft_strjoin(result[i], prog);
 		if (access(joined, F_OK) == 0)
 		{
+			free(prog);
+			free(result);
 			return (joined);
 		}
+		free(joined);
 		i++;
 	}
+	i = 0;
+	while (result[i])
+	{
+		free(result[i++]);
+	}
+	free(result);
+	free(prog);
 	return (0);
 }

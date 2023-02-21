@@ -15,7 +15,7 @@ NAME	= pipex
 M_SRCS	= ft_pipex.c ft_utils.c main.c
 B_SRCS	= ft_pipex_bonus.c constr_pipex_bonus.c ft_utils_bonus.c ft_here_doc.c main_bonus.c
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -fsanitize=address
 CC 		= cc
 RM		= rm -f
 

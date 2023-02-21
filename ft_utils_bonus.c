@@ -101,12 +101,14 @@ char	*ft_get_paths(char *envp, char *arg)
 	i = 0;
 	while (result[i])
 	{
-		joined = ft_strjoin(result[i], prog);
+		joined = ft_strjoin(result[i++], prog);
 		if (access(joined, F_OK) == 0)
-		{
 			return (joined);
-		}
-		i++;
 	}
+	i = 0;
+	while (result[i])
+		free(result[i++]);
+	free(result);
+	free(prog);
 	return (0);
 }

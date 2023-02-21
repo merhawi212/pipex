@@ -52,23 +52,3 @@ void	close_pipes(int *fd[], int len)
 		close(fd[i++][1]);
 	}
 }
-
-char	**update_argv(char **argv)
-{
-	char	**temp;
-	int		i;
-	int		j;
-
-	temp = malloc(ft_double_strlen(argv) * sizeof(char));
-	if (!temp)
-		return (NULL);
-	i = 0;
-	j = 0;
-	while (i < 2)
-		temp[j++] = argv[i++];
-	i++;
-	while (argv[i])
-		temp[j++] = argv[i++];
-	temp[j] = 0;
-	return (temp);
-}

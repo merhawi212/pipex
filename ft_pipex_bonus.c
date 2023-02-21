@@ -20,9 +20,9 @@ static void	ft_last_child_proc(int *fd[], char **argv, char *path, int len)
 	{
 		fd2 = open(argv[len + 3], O_CREAT | O_WRONLY | O_TRUNC, 0777);
 		dup2(fd[len - 1][0], STDIN_FILENO);
+		close_pipes(fd, len);
 		dup2(fd2, STDOUT_FILENO);
 		close(fd2);
-		close_pipes(fd, len);
 		if (!ft_get_paths(path, argv[len + 2]))
 		{
 			ft_putstr_fd("cmd not la found\n", 2);
@@ -36,6 +36,7 @@ static void	ft_last_child_proc(int *fd[], char **argv, char *path, int len)
 		}
 		exit(9);
 	}
+	// close(fd2);
 }
 
 static void	ft_child_pro_middle(int *fd[], char **argv, char *path, int len)
@@ -76,13 +77,13 @@ static void	ft_child_pro_one(int *fd[], char **argv, char *path, int len)
 		fd1 = open(argv[1], O_RDONLY, 0777);
 		dup2(fd1, STDIN_FILENO);
 		dup2(fd[0][1], STDOUT_FILENO);
+		close(fd1);
+		close_pipes(fd, len);
 		if (!ft_get_paths(path, argv[2]))
 		{
 			ft_putstr_fd("cmd not foun\n", 2);
 			exit(2);
 		}
-		close(fd1);
-		close_pipes(fd, len);
 		if (execve(ft_get_paths(path, argv[2]),
 				ft_split(argv[2], ' '), NULL) == -1)
 		{
@@ -91,6 +92,7 @@ static void	ft_child_pro_one(int *fd[], char **argv, char *path, int len)
 		}
 		exit(4);
 	}
+	// close(fd1);
 }
 
 void	ft_pipex_bonus(char **argv, char *envp[], int len)
@@ -116,6 +118,10 @@ void	ft_pipex_bonus(char **argv, char *envp[], int len)
 	}
 	ft_last_child_proc(fd, argv, envp[i], len);
 	close_pipes(fd, len);
+	i = 0;
+	while (i < len)
+		free(fd[i++]);
+	free(fd);
 	i = -1;
 	while (++i < (len + 1))
 		wait(NULL);

@@ -20,7 +20,7 @@
 # include <string.h>
 # include "./libft/libft.h"
 
-void	ft_pipex(int fd1, int fd2, char **argv, char*envp[]);
+void	ft_pipex(char **argv, char*envp[]);
 char	*split_prog(char *arg);
 char	*ft_get_paths(char *envp, char *arg);
 int		ft_search_path( char **s1, char *s2);
