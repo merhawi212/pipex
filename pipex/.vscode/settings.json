@@ -1,7 +1,0 @@
-{
-	"files.associations": {
-		"*.ds_store": "c",
-		"stdlib.h": "c",
-		"stdio.h": "c"
-	}
-}
