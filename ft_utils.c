@@ -81,29 +81,20 @@ char	*ft_get_paths(char *envp, char *arg)
 	int		i;
 
 	if (!arg || !arg[0])
-	{
 		return (0);
-	}
 	result = ft_split(envp, ':');
 	prog = split_prog(arg);
 	i = 0;
 	while (result[i])
 	{
-		joined = ft_strjoin(result[i], prog);
+		joined = ft_strjoin(result[i++], prog);
 		if (access(joined, F_OK) == 0)
-		{
-			free(prog);
-			free(result);
 			return (joined);
-		}
 		free(joined);
-		i++;
 	}
 	i = 0;
 	while (result[i])
-	{
 		free(result[i++]);
-	}
 	free(result);
 	free(prog);
 	return (0);

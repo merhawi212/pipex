@@ -15,27 +15,22 @@
 
 int	main(int argc, char **argv, char *envp[])
 {
-	// int	fd1;
-	// int	fd2;
+	int	fd[2];
+	int	i;
 
 	if (argc != 5)
 	{
 		ft_printf("Usage: %s input_file cmd1 cmd2 output_file\n", argv[0]);
 		return (1);
 	}
-	// fd1 = open(argv[1], O_RDONLY, 0777);
-	// if (fd1 == -1)
-	// {
-	// 	perror("open input file is not exits or file is not readable");
-	// 	exit(0);
-	// }
-	// fd2 = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0777);
-	// if (fd2 == -1)
-	// {
-	// 	perror("open output file is not exits or file is not readable");
-	// 	exit(1);
-	// }
-	ft_pipex(argv, envp);
+	i = ft_search_path(envp, "PATH=");
+	ft_child_process_one(fd, argv, envp, i);
+	ft_child_process_two(fd, argv, envp, i);
+	close(fd[0]);
+	close(fd[1]);
+	wait(NULL);
+	wait(NULL);
+	// ft_pipex(argv, envp);
 	// close(fd1);
 	// close(fd2);
 	return (0);

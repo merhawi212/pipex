@@ -20,14 +20,11 @@
 # include <string.h>
 # include "./libft/libft.h"
 
-void	ft_pipex(char **argv, char*envp[]);
+// void	ft_pipex(char **argv, char*envp[]);
 char	*split_prog(char *arg);
 char	*ft_get_paths(char *envp, char *arg);
 int		ft_search_path( char **s1, char *s2);
-// char	**ft_split(char const *s, char c);
-// char	*ft_strjoin(char const *s1, char const *s2);
-// size_t	ft_strlcat(char *dst, const char *src, size_t size);
-// size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-// size_t	ft_strlen(const char *s);
+void	ft_child_process_one(int fd[], char **argv, char **envp, int i);
+void	ft_child_process_two(int fd[], char **argv, char **envp, int i);
 
 #endif
