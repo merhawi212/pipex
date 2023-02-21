@@ -1,62 +1,15 @@
-==25399== Memcheck, a memory error detector
-==25399== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==25399== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==25399== Command: ../pipex assets/deepthought.txt cat not-executable outs/test-12.txt
-==25399== 
-cmd ncmd not foun
-ot foun
-==25421== 
-==25421== HEAP SUMMARY:
-==25421==     in use at exit: 17 bytes in 1 blocks
-==25421==   total heap usage: 4 allocs, 3 frees, 59 bytes allocated
-==25421== 
-==25421== 17 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==25421==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==25421==    by 0x10A557: ft_substr (in /workspaces/pipex/pipex)
-==25421==    by 0x109E4D: ft_split (in /workspaces/pipex/pipex)
-==25421==    by 0x109A2F: ft_get_paths (in /workspaces/pipex/pipex)
-==25421==    by 0x1093EA: ft_child_process_two (in /workspaces/pipex/pipex)
-==25421==    by 0x109700: ft_pipex (in /workspaces/pipex/pipex)
-==25421==    by 0x109BD1: main (in /workspaces/pipex/pipex)
-==25421== 
-==25421== LEAK SUMMARY:
-==25421==    definitely lost: 17 bytes in 1 blocks
-==25421==    indirectly lost: 0 bytes in 0 blocks
-==25421==      possibly lost: 0 bytes in 0 blocks
-==25421==    still reachable: 0 bytes in 0 blocks
-==25421==         suppressed: 0 bytes in 0 blocks
-==25421== 
-==25421== For lists of detected and suppressed errors, rerun with: -s
-==25421== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-==25420== 
-==25420== HEAP SUMMARY:
-==25420==     in use at exit: 17 bytes in 1 blocks
-==25420==   total heap usage: 4 allocs, 3 frees, 59 bytes allocated
-==25420== 
-==25420== 17 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==25420==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
-==25420==    by 0x10A557: ft_substr (in /workspaces/pipex/pipex)
-==25420==    by 0x109E4D: ft_split (in /workspaces/pipex/pipex)
-==25420==    by 0x109A2F: ft_get_paths (in /workspaces/pipex/pipex)
-==25420==    by 0x1095E5: ft_child_process_one (in /workspaces/pipex/pipex)
-==25420==    by 0x1096EA: ft_pipex (in /workspaces/pipex/pipex)
-==25420==    by 0x109BD1: main (in /workspaces/pipex/pipex)
-==25420== 
-==25420== LEAK SUMMARY:
-==25420==    definitely lost: 17 bytes in 1 blocks
-==25420==    indirectly lost: 0 bytes in 0 blocks
-==25420==      possibly lost: 0 bytes in 0 blocks
-==25420==    still reachable: 0 bytes in 0 blocks
-==25420==         suppressed: 0 bytes in 0 blocks
-==25420== 
-==25420== For lists of detected and suppressed errors, rerun with: -s
-==25420== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-==25399== 
-==25399== HEAP SUMMARY:
-==25399==     in use at exit: 0 bytes in 0 blocks
-==25399==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==25399== 
-==25399== All heap blocks were freed -- no leaks are possible
-==25399== 
-==25399== For lists of detected and suppressed errors, rerun with: -s
-==25399== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==32110== Memcheck, a memory error detector
+==32110== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==32110== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==32110== Command: ../pipex assets/deepthought.txt cat not-executable outs/test-12.txt
+==32110== 
+==32110==ASan runtime does not come first in initial library list; you should either link runtime to your application or manually preload it with LD_PRELOAD.
+==32110== 
+==32110== HEAP SUMMARY:
+==32110==     in use at exit: 0 bytes in 0 blocks
+==32110==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==32110== 
+==32110== All heap blocks were freed -- no leaks are possible
+==32110== 
+==32110== For lists of detected and suppressed errors, rerun with: -s
+==32110== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

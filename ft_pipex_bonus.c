@@ -68,13 +68,27 @@ static void	ft_child_pro_middle(int *fd[], char **argv, char *path, int len)
 	}
 }
 
+static int open_file(char *str)
+{
+	int fd1;
+
+	fd1 = open(str, O_RDONLY, 0777);
+	if (fd1 == -1)
+	{
+			ft_putstr_fd("cmd not foun\n", 2);
+			close(fd1);
+			exit(7);
+	}
+	return (fd1);
+}
+
 static void	ft_child_pro_one(int *fd[], char **argv, char *path, int len)
 {
 	int	fd1;
 
 	if (get_pid() == 0)
 	{
-		fd1 = open(argv[1], O_RDONLY, 0777);
+		fd1 = open_file(argv[1]);
 		dup2(fd1, STDIN_FILENO);
 		dup2(fd[0][1], STDOUT_FILENO);
 		close(fd1);
@@ -92,7 +106,6 @@ static void	ft_child_pro_one(int *fd[], char **argv, char *path, int len)
 		}
 		exit(4);
 	}
-	// close(fd1);
 }
 
 void	ft_pipex_bonus(char **argv, char *envp[], int len)
@@ -113,15 +126,9 @@ void	ft_pipex_bonus(char **argv, char *envp[], int len)
 	else
 		ft_child_pro_one(fd, argv, envp[i], len);
 	if (len > 1)
-	{
 		ft_child_pro_middle(fd, argv, envp[i], len);
-	}
 	ft_last_child_proc(fd, argv, envp[i], len);
 	close_pipes(fd, len);
-	i = 0;
-	while (i < len)
-		free(fd[i++]);
-	free(fd);
 	i = -1;
 	while (++i < (len + 1))
 		wait(NULL);

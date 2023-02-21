@@ -30,8 +30,5 @@ int	main(int argc, char **argv, char *envp[])
 	close(fd[1]);
 	wait(NULL);
 	wait(NULL);
-	// ft_pipex(argv, envp);
-	// close(fd1);
-	// close(fd2);
 	return (0);
 }
