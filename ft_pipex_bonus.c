@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 14:13:24 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/21 12:33:19 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:26:00 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ static void	ft_last_child_proc(int *fd[], char **argv, char *path, int len)
 		}
 		exit(9);
 	}
-	// close(fd2);
 }
 
 static void	ft_child_pro_middle(int *fd[], char **argv, char *path, int len)
@@ -68,16 +67,16 @@ static void	ft_child_pro_middle(int *fd[], char **argv, char *path, int len)
 	}
 }
 
-static int open_file(char *str)
+static int	open_file(char *str)
 {
-	int fd1;
+	int	fd1;
 
 	fd1 = open(str, O_RDONLY, 0777);
 	if (fd1 == -1)
 	{
-			ft_putstr_fd("cmd not foun\n", 2);
-			close(fd1);
-			exit(7);
+		ft_putstr_fd("cmd not foun\n", 2);
+		close(fd1);
+		exit(7);
 	}
 	return (fd1);
 }

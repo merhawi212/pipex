@@ -6,7 +6,7 @@
 #    By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 20:21:25 by mkiflema          #+#    #+#              #
-#    Updated: 2023/02/20 22:40:58 by mkiflema         ###   ########.fr        #
+#    Updated: 2023/02/22 12:42:20 by mkiflema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,4 +40,4 @@ bonus: $(B_OBJS)
 	@cd ./libft && make
 	@$(CC) $(CFLAGS) $(B_OBJS) ./libft/libft.a -o $(NAME)
 
-re: fclean all
+re: fclean all bonus

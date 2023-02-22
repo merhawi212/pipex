@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 22:17:36 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/20 22:37:36 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/21 20:29:03 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ char	**here_doc(int *fd[], char **argv, char *path, int len)
 	{
 		if (ft_strncmp(line, argv[2], ft_strlen(argv[2])) == 0)
 		{
-			free(line);
 			break ;
 		}
 		write(fd1, line, ft_strlen(line));

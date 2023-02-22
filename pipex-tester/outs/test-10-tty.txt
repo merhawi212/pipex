@@ -1,1 +1,1 @@
-cmd not foun
+file is not valid or available

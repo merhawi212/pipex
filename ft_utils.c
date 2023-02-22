@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 20:06:35 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/21 12:35:22 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:39:11 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,9 @@ char	*split_prog(char *arg)
 
 	i = 0;
 	j = 0;
-	while (arg[i] && (arg[i] < 'A' || (arg[i] > 'Z' && arg[i] < 'a')
-			|| arg[i] > 'z'))
+	while (arg[i] && (arg[i] == ' '))
 		i++;
-	while (arg[i] && ((arg[i] >= 'A' && arg[i] <= 'Z')
-			|| (arg[i] >= 'a' && arg[i] <= 'z')))
+	while (arg[i] && (arg[i] != ' '))
 	{
 		j++;
 		i++;
@@ -82,7 +80,9 @@ char	*ft_get_paths(char *envp, char *arg)
 
 	if (!arg || !arg[0])
 		return (0);
-	result = ft_split(envp, ':');
+	if (access(arg, F_OK) == 0)
+		return (arg);
+	result = ft_split(envp + 5, ':');
 	prog = split_prog(arg);
 	i = 0;
 	while (result[i])

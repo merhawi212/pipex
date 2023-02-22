@@ -6,12 +6,11 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:26:45 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/17 15:07:04 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:49:16 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pipex_bonus.h"
-#include <stdlib.h>
 
 int	ft_search_path( char **s1, char *s2)
 {
@@ -72,11 +71,9 @@ char	*split_prog(char *arg)
 
 	i = 0;
 	j = 0;
-	while (arg[i] && (arg[i] < 'A' || (arg[i] > 'Z' && arg[i] < 'a')
-			|| arg[i] > 'z'))
+	while (arg[i] && (arg[i] == ' '))
 		i++;
-	while (arg[i] && ((arg[i] >= 'A' && arg[i] <= 'Z')
-			|| (arg[i] >= 'a' && arg[i] <= 'z')))
+	while (arg[i] && (arg[i] != ' '))
 	{
 		j++;
 		i++;
@@ -92,11 +89,10 @@ char	*ft_get_paths(char *envp, char *arg)
 	int		i;
 
 	if (!arg || !arg[0])
-	{
-		ft_putstr_fd("cmd not foun\n", 2);
-		exit(1);
-	}
-	result = ft_split(envp, ':');
+		return (0);
+	if (access(arg, F_OK) == 0)
+		return (arg);
+	result = ft_split(envp + 5, ':');
 	prog = split_prog(arg);
 	i = 0;
 	while (result[i])

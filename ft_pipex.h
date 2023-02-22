@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 20:04:43 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/13 13:33:31 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:33:52 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_get_paths(char *envp, char *arg);
 int		ft_search_path( char **s1, char *s2);
 void	ft_child_process_one(int fd[], char **argv, char **envp, int i);
 void	ft_child_process_two(int fd[], char **argv, char **envp, int i);
+// void	ft_pipex(char **argv, char*envp[]);
 
 #endif
