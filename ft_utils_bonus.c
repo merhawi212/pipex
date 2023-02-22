@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:26:45 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/22 12:49:16 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:10:47 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	ft_search_path( char **s1, char *s2)
 		while (s1[j][i] && i < 5)
 		{
 			if (s1[j][i] != s2[i])
+			{
+				c = 0;
 				break ;
+			}
 			c++;
 			i++;
 		}
@@ -100,6 +103,7 @@ char	*ft_get_paths(char *envp, char *arg)
 		joined = ft_strjoin(result[i++], prog);
 		if (access(joined, F_OK) == 0)
 			return (joined);
+		free(joined);
 	}
 	i = 0;
 	while (result[i])

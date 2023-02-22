@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 22:17:36 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/21 20:29:03 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:51:37 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static char	**update_argv(char **argv)
 	while (argv[i])
 		temp[j++] = argv[i++];
 	temp[j] = 0;
-	free(argv);
 	return (temp);
 }
 

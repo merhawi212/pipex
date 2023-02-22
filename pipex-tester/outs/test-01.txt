@@ -1,1 +1,4 @@
-make: Nothing to be done for `all'.
+cc -Wall -Wextra -Werror   -c -o ft_pipex.o ft_pipex.c
+cc -Wall -Wextra -Werror   -c -o ft_utils.o ft_utils.c
+cc -Wall -Wextra -Werror   -c -o main.o main.c
+make[1]: Nothing to be done for `all'.

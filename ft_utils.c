@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 20:06:35 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/22 12:39:11 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:18:47 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ int	ft_search_path( char **s1, char *s2)
 		while (s1[j][i] && i < 5)
 		{
 			if (s1[j][i] != s2[i])
+			{
+				c = 0;
 				break ;
+			}
 			c++;
 			i++;
 		}
