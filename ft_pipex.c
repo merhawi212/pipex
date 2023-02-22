@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:22:39 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/22 11:51:37 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:04:25 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_child_process_two(int fd[], char **argv, char **envp, int i)
 		close(fd[0]);
 		if (!ft_get_paths(envp[i], argv[3]))
 		{
-			ft_putstr_fd("cmd not foun\n", 2);
+			ft_putstr_fd("cmd not found\n", 2);
 			exit(7);
 		}
 		if (execve(ft_get_paths(envp[i], argv[3]),
@@ -102,7 +102,7 @@ void	ft_child_process_one(int fd[], char **argv, char **envp, int i)
 		close(fd1);
 		if (!ft_get_paths(envp[i], argv[2]))
 		{
-			ft_putstr_fd("cmd not foun\n", 2);
+			ft_putstr_fd("cmd not found\n", 2);
 			exit(2);
 		}
 		if (execve(ft_get_paths(envp[i], argv[2]), ft_split(argv[2], ' '),

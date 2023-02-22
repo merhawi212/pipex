@@ -6,7 +6,7 @@
 /*   By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 14:13:24 by mkiflema          #+#    #+#             */
-/*   Updated: 2023/02/21 20:26:00 by mkiflema         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:16:12 by mkiflema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_last_child_proc(int *fd[], char **argv, char *path, int len)
 		close(fd2);
 		if (!ft_get_paths(path, argv[len + 2]))
 		{
-			ft_putstr_fd("cmd not la found\n", 2);
+			ft_putstr_fd("cmd not found\n", 2);
 			exit(4);
 		}
 		if (execve(ft_get_paths(path, argv[len + 2]),
@@ -52,7 +52,7 @@ static void	ft_child_pro_middle(int *fd[], char **argv, char *path, int len)
 			close_pipes(fd, len);
 			if (!ft_get_paths(path, argv[i + 2]))
 			{
-				ft_putstr_fd("cmd not's foun\n", 2);
+				ft_putstr_fd("cmd not found\n", 2);
 				exit(2);
 			}
 			if (execve(ft_get_paths(path, argv[i + 2]),
@@ -74,7 +74,7 @@ static int	open_file(char *str)
 	fd1 = open(str, O_RDONLY, 0777);
 	if (fd1 == -1)
 	{
-		ft_putstr_fd("cmd not foun\n", 2);
+		ft_putstr_fd("cmd not found\n", 2);
 		close(fd1);
 		exit(7);
 	}
@@ -94,7 +94,7 @@ static void	ft_child_pro_one(int *fd[], char **argv, char *path, int len)
 		close_pipes(fd, len);
 		if (!ft_get_paths(path, argv[2]))
 		{
-			ft_putstr_fd("cmd not foun\n", 2);
+			ft_putstr_fd("cmd not found\n", 2);
 			exit(2);
 		}
 		if (execve(ft_get_paths(path, argv[2]),
