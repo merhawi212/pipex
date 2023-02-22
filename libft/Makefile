@@ -6,7 +6,7 @@
 #    By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 22:48:28 by mkiflema          #+#    #+#              #
-#    Updated: 2023/02/20 22:48:29 by mkiflema         ###   ########.fr        #
+#    Updated: 2023/02/22 14:53:06 by mkiflema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ clean:
 	@$(RM) $(M_OBJS) $(B_OBJS)
 
 fclean: clean
-		$(RM) $(NAME)
+		@$(RM) $(NAME)
 
 re: fclean  all
 
