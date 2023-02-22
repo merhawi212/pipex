@@ -1,1 +1,1 @@
-cmd not foun
+cmd not found

@@ -6,7 +6,7 @@
 #    By: mkiflema <mkiflema@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/10 20:21:25 by mkiflema          #+#    #+#              #
-#    Updated: 2023/02/22 13:17:17 by mkiflema         ###   ########.fr        #
+#    Updated: 2023/02/22 14:34:37 by mkiflema         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME	= pipex
 M_SRCS	= ft_pipex.c ft_utils.c main.c
 B_SRCS	= ft_pipex_bonus.c constr_pipex_bonus.c ft_utils_bonus.c ft_here_doc.c main_bonus.c
 
-CFLAGS	= -Wall -Wextra -Werror -fsanitize=address
+CFLAGS	= -Wall -Wextra -Werror -fsanitize=address 
 CC 		= cc
 RM		= rm -f
 
