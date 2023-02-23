@@ -1,1 +1,0 @@
-Usage: ../pipex input_file cmd1 cmd2 output_file
