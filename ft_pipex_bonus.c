@@ -26,15 +26,15 @@ static void	ft_last_child_proc(int *fd[], char **argv, char *path, int len)
 		if (!ft_get_paths(path, argv[len + 2]))
 		{
 			ft_putstr_fd("cmd not found\n", 2);
-			exit(4);
+			exit(1);
 		}
 		if (execve(ft_get_paths(path, argv[len + 2]),
 				ft_split(argv[len + 2], ' '), NULL) == -1)
 		{
 			perror("execve error");
-			exit(8);
+			exit(1);
 		}
-		exit(9);
+		exit(0);
 	}
 }
 
@@ -59,9 +59,9 @@ static void	ft_child_pro_middle(int *fd[], char **argv, char *path, int len)
 					ft_split(argv[i + 2], ' '), NULL) == -1)
 			{
 				perror("execve");
-				exit(8);
+				exit(1);
 			}
-			exit(4);
+			exit(0);
 		}
 		i++;
 	}
@@ -76,7 +76,7 @@ static int	open_file(char *str)
 	{
 		ft_putstr_fd("cmd not found\n", 2);
 		close(fd1);
-		exit(7);
+		exit(1);
 	}
 	return (fd1);
 }
@@ -95,15 +95,15 @@ static void	ft_child_pro_one(int *fd[], char **argv, char *path, int len)
 		if (!ft_get_paths(path, argv[2]))
 		{
 			ft_putstr_fd("cmd not found\n", 2);
-			exit(2);
+			exit(1);
 		}
 		if (execve(ft_get_paths(path, argv[2]),
 				ft_split(argv[2], ' '), NULL) == -1)
 		{
 			perror("execve");
-			exit(8);
+			exit(1);
 		}
-		exit(4);
+		exit(0);
 	}
 }
 
